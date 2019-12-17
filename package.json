@@ -1,0 +1,15 @@
+{
+  "name": "projet-store-cucumber",
+  "version": "1.0.0",
+  "description": "Cucumber test suite to test project-store",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.19.0",
+    "cucumber": "^6.0.5"
+  }
+}
