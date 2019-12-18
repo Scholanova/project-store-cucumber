@@ -16,6 +16,11 @@ class HTTPClient {
     return this.instance
       .post(path, data)
   }
+
+  delete ({ path }) {
+    return this.instance
+      .delete(path)
+  }
 }
 
 module.exports = HTTPClient
