@@ -1,5 +1,6 @@
 const { Given, When, Then } = require('cucumber')
 const { expect } = require('chai')
+const faker = require('faker')
 const { buildStore } = require('../utils/store_generator')
 
 Given('I have a store', function () {
@@ -32,6 +33,15 @@ When('I get that store by id', function () {
       this.requestResponse = axiosResponse
     })
 })
+
+When('I get a store by id with a random id', function () {
+  return this.httpClient
+    .get({ path: `/stores/${faker.random.number({ min: 10000 })}` })
+    .then((axiosResponse) => {
+      this.requestResponse = axiosResponse
+    })
+})
+
 When('I delete that store', function () {
   return this.httpClient
     .delete({ path: `/stores/${this.store.id}` })

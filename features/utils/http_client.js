@@ -3,7 +3,8 @@ const axios = require('axios')
 class HTTPClient {
   constructor ({ baseURL }) {
     this.instance = axios.create({
-      baseURL
+      baseURL,
+      validateStatus: (status) => true
     })
   }
 
